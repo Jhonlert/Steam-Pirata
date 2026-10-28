@@ -24,8 +24,7 @@ uv run steampirata
 
 - **flet**: única librería externa (la instala `uv sync`).
 - Para hablar con la API se usa **`urllib`**, que ya viene con Python. No se usa `requests` a propósito:
-  así no hay una dependencia más que mantener. Si algún día se quiere cambiar, solo hay que tocar
-  `api_client.py`; el resto del programa no se entera.
+  así no hay una dependencia más que mantener.
 
 ## Configuración de la API
 
@@ -34,11 +33,11 @@ Todo está en `src/steampirata/config.py`:
 | Ajuste | Para qué sirve |
 |---|---|
 | `API_URL` | Endpoint `GET /api/v1/jhonlert/games` |
-| `API_KEY` | Clave que se envía en la cabecera `X-API-Key` (la da el profesor) |
+| `API_KEY` | Clave que se envía en la cabecera `X-API-Key`|
 | `API_TIMEOUT` | Segundos de espera por la respuesta |
 | `API_RETRIES` / `API_RETRY_DELAY` | Reintentos automáticos y pausa entre ellos |
 
-> La API key es personal. Si el repositorio es público, déjala vacía antes de subirlo.
+> La API key es personal.
 > El servidor gratuito (Render) puede tardar hasta un minuto en despertar la primera vez.
 
 ## Arquitectura
@@ -58,7 +57,7 @@ CartScreen   ┘                  └─ Cart                         │
 - `GameCover`: dibuja la portada y el color de cada género (sin internet).
 - `SteamPirataApp`: tiene la tienda y el carrito y decide qué pantalla se ve.
 
-## Dónde se manejan los errores (try / except)
+## Dónde se manejan los errores
 
 | Archivo | Función | Qué controla |
 |---|---|---|
